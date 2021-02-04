@@ -10,7 +10,9 @@ const HEADER_TITLE = 'TEXT BANNER GENERATOR';
 const Header = (props) => {
   return (
     <HeaderStyledWrapper>
-      <span className='header-title'>{HEADER_TITLE}</span>
+      <span className='header-title' onClick={() => window.location.reload()}>
+        {HEADER_TITLE}
+      </span>
     </HeaderStyledWrapper>
   );
 };
@@ -25,6 +27,7 @@ const HeaderStyledWrapper = styled.div`
     padding: 30px;
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
   }
 
   .header-title:hover {

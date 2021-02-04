@@ -22,7 +22,7 @@ const InputArea = (props) => {
         placeholder="TYPE BANNER TITLE ' 3')/ "
       />
     ),
-    [canvasText],
+    [canvasText, setCanvasText],
   );
 
   const SizeInput = useMemo(
@@ -42,7 +42,7 @@ const InputArea = (props) => {
         />
       </div>
     ),
-    [canvasWidth, canvasHeight],
+    [canvasWidth, canvasHeight, setCanvasWidth, setCanvasHeight],
   );
 
   return (

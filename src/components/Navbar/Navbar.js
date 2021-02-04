@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
-const PORTFOLIO = "https://melonbarcode.site/";
+const PORTFOLIO_LINK = 'https://melonbarcode.site/';
+const TEXT_BANNER_GENERATOR_GIT_LINK = 'https://github.com/melonbarCode/text-banner-generator';
 
 /**
  * @param {*} props
@@ -13,13 +13,13 @@ const Navbar = (props) => {
     {
       label: 'INTRODUCE SITE',
       onClick: () => {
-        window.open(`${PROFILE_LINK}/banner-maker`);
+        window.open(PORTFOLIO_LINK);
       },
     },
     {
       label: 'GIT',
       onClick: () => {
-        window.open(`${PROFILE_LINK}/banner-maker`);
+        window.open(TEXT_BANNER_GENERATOR_GIT_LINK);
       },
     },
   ];
@@ -28,7 +28,9 @@ const Navbar = (props) => {
     <NavbarStyledWrapper>
       <ul className='nav-link-list'>
         {linklist.map((linkItem) => (
-          <li className='nav-list-item'>{linkItem.label}</li>
+          <li key={linkItem.label} className='nav-list-item' onClick={linkItem.onClick}>
+            {linkItem.label}
+          </li>
         ))}
       </ul>
     </NavbarStyledWrapper>
@@ -49,6 +51,7 @@ const NavbarStyledWrapper = styled.div`
     padding: 20px;
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
   }
 
   .nav-list-item:hover {

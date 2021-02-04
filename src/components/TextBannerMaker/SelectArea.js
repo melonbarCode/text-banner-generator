@@ -20,22 +20,26 @@ const SelectArea = (props) => {
     () => (
       <Select value={canvasFontFamily} onChange={(value) => setCanvasFontFamily(value)} className='font-select'>
         {fontFamilyList.map((fontFamily) => (
-          <Option value={fontFamily}>{fontFamily}</Option>
+          <Option key={fontFamily} value={fontFamily}>
+            {fontFamily}
+          </Option>
         ))}
       </Select>
     ),
-    [canvasFontFamily],
+    [fontFamilyList, canvasFontFamily, setCanvasFontFamily],
   );
 
   const FontSizeSelect = useMemo(
     () => (
       <Select value={canvasFontSize} onChange={(value) => setCanvasFontSize(value)} className='font-select'>
         {fontSizeList.map((fontSize) => (
-          <Option value={fontSize}>{fontSize}</Option>
+          <Option key={fontSize} value={fontSize}>
+            {fontSize}
+          </Option>
         ))}
       </Select>
     ),
-    [canvasFontSize],
+    [fontSizeList, canvasFontSize, setCanvasFontSize],
   );
 
   return (

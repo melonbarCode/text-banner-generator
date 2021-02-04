@@ -17,7 +17,7 @@ const ButtonArea = (props) => {
         <Button className='download-btn'>Download</Button>
       </a>
     ),
-    [],
+    [canvasImageDownlink, canvasText],
   );
 
   return <ButtonAreaStyledWrapper>{DownloadBtn}</ButtonAreaStyledWrapper>;

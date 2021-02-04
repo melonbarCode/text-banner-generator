@@ -41,7 +41,16 @@ const TextBannerPreview = () => {
       setCanvasImageDownlink(canvas.toDataURL());
     };
     render();
-  }, [canvasText, canvasFontSize, canvasFontFamily, canvasWidth, canvasHeight, canvasBackgroundColor, canvasFontColor]);
+  }, [
+    canvasText,
+    canvasFontSize,
+    canvasFontFamily,
+    canvasWidth,
+    canvasHeight,
+    canvasBackgroundColor,
+    canvasFontColor,
+    setCanvasImageDownlink,
+  ]);
 
   return <canvas ref={canvasRef} />;
 };

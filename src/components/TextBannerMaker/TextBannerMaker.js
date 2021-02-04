@@ -1,4 +1,3 @@
-import { Button, Input, Select } from 'antd';
 import React from 'react';
 import styled from 'styled-components';
 import ButtonArea from './ButtonArea';
