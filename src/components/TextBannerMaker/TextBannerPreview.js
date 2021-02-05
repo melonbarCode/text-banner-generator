@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useContext } from 'react';
+import styled from 'styled-components';
 import { GlobalContext } from '../../contexts/globalContext';
 const DEFAULT_TEXT = 'SAMPLE TEXT';
 
@@ -52,8 +53,19 @@ const TextBannerPreview = () => {
     setCanvasImageDownlink,
   ]);
 
-  return <canvas ref={canvasRef} />;
+  return (
+    <TextBannerPreviewStyledWrapper>
+      <canvas ref={canvasRef} />
+    </TextBannerPreviewStyledWrapper>
+  );
 };
+
+const TextBannerPreviewStyledWrapper = styled.div`
+  text-align: center;
+  margin: 10px auto;
+  /* overflow: hidden; */
+  /* width: 300px; */
+`;
 
 /**
  *

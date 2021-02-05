@@ -27,6 +27,7 @@ const HeaderStyledWrapper = styled.div`
     padding: 30px;
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
+    margin: 10px;
     cursor: pointer;
   }
 
