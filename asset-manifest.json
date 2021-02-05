@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/text-banner-generator/static/css/main.a083d0a7.chunk.css",
-    "main.js": "/text-banner-generator/static/js/main.9ff34f7f.chunk.js",
-    "main.js.map": "/text-banner-generator/static/js/main.9ff34f7f.chunk.js.map",
+    "main.css": "/text-banner-generator/static/css/main.5ce3fae1.chunk.css",
+    "main.js": "/text-banner-generator/static/js/main.e7423e99.chunk.js",
+    "main.js.map": "/text-banner-generator/static/js/main.e7423e99.chunk.js.map",
     "runtime-main.js": "/text-banner-generator/static/js/runtime-main.201c0714.js",
     "runtime-main.js.map": "/text-banner-generator/static/js/runtime-main.201c0714.js.map",
     "static/css/2.39fabea5.chunk.css": "/text-banner-generator/static/css/2.39fabea5.chunk.css",
-    "static/js/2.599cb9ec.chunk.js": "/text-banner-generator/static/js/2.599cb9ec.chunk.js",
-    "static/js/2.599cb9ec.chunk.js.map": "/text-banner-generator/static/js/2.599cb9ec.chunk.js.map",
+    "static/js/2.ad6a7a59.chunk.js": "/text-banner-generator/static/js/2.ad6a7a59.chunk.js",
+    "static/js/2.ad6a7a59.chunk.js.map": "/text-banner-generator/static/js/2.ad6a7a59.chunk.js.map",
     "index.html": "/text-banner-generator/index.html",
-    "precache-manifest.91737d770f64f023049f28bbd6790dd4.js": "/text-banner-generator/precache-manifest.91737d770f64f023049f28bbd6790dd4.js",
+    "precache-manifest.21187c9386261630344479065477e348.js": "/text-banner-generator/precache-manifest.21187c9386261630344479065477e348.js",
     "service-worker.js": "/text-banner-generator/service-worker.js",
     "static/css/2.39fabea5.chunk.css.map": "/text-banner-generator/static/css/2.39fabea5.chunk.css.map",
-    "static/css/main.a083d0a7.chunk.css.map": "/text-banner-generator/static/css/main.a083d0a7.chunk.css.map",
-    "static/js/2.599cb9ec.chunk.js.LICENSE.txt": "/text-banner-generator/static/js/2.599cb9ec.chunk.js.LICENSE.txt"
+    "static/css/main.5ce3fae1.chunk.css.map": "/text-banner-generator/static/css/main.5ce3fae1.chunk.css.map",
+    "static/js/2.ad6a7a59.chunk.js.LICENSE.txt": "/text-banner-generator/static/js/2.ad6a7a59.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.201c0714.js",
     "static/css/2.39fabea5.chunk.css",
-    "static/js/2.599cb9ec.chunk.js",
-    "static/css/main.a083d0a7.chunk.css",
-    "static/js/main.9ff34f7f.chunk.js"
+    "static/js/2.ad6a7a59.chunk.js",
+    "static/css/main.5ce3fae1.chunk.css",
+    "static/js/main.e7423e99.chunk.js"
   ]
 }
