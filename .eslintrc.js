@@ -1,17 +1,24 @@
-module.exports = {
+module.export = {
   env: {
     browser: true,
     es6: true,
     node: true,
     jest: true,
   },
-  extends: ['airbnb'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+    'prettier/@typescript-eslint',
+  ],
   globals: {
     Atomics: 'readable',
     SharedArrayBuffer: 'readable',
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    project: './tsconfig.json',
     ecmaFeatures: {
       jsx: true,
     },
@@ -25,18 +32,7 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    'airbnb',
-    'prettier',
-    'prettier/react',
-    'prettier/@typescript-eslint',
-    'eslint-plugin-prettier',
-    'react',
-    'jsx-a11y',
-    'import',
-    '@typescript-eslint',
-    'react-hooks',
-  ],
+  plugins: ['react', 'import', 'react-hooks', 'eslint', '@typescript-eslint'],
   rules: {
     'import/extensions': [
       'error',
@@ -48,17 +44,14 @@ module.exports = {
         jsx: 'never',
       },
     ],
-    semi: ['error', 'never'],
+    semi: ['error', 'always'],
     camelcase: 'off',
     'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',
     'consistent-return': 'warn',
     'no-return-assign': 'off',
     'no-eq-null': 'error',
-    'no-param-reassign': [
-      'error',
-      { props: true, ignorePropertyModificationsFor: ['ctx'] },
-    ],
+    'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['ctx'] }],
     'no-underscore-dangle': 'off',
     'no-mixed-operators': 'off',
     'no-nested-ternary': 'off',
@@ -100,7 +93,7 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react/require-default-props': 'off',
     'react/jsx-first-prop-new-line': [1, 'multiline'],
-    'react/jsx-max-props-per-line': [1, { maximum: 1 }],
+    'react/jsx-max-props-per-line': [0, { when: 'always' }],
     'react/jsx-one-expression-per-line': 'off',
     'react/prop-types': 'off', // props validation by typescript
     'no-confusing-arrow': 0,
@@ -117,4 +110,4 @@ module.exports = {
     'arrow-parens': 'off',
     'no-useless-constructor': 'off',
   },
-}
+};

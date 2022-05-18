@@ -6,7 +6,13 @@ import Palette from './Palette';
 import SelectArea from './SelectArea';
 import TextBannerPreview from './TextBannerPreview';
 
-const TextBannerMaker = (props) => {
+const TextBannerMakerStyledWrapper = styled.div`
+  text-align: center;
+  box-sizing: border-box;
+  margin-top: 30px;
+`;
+
+function TextBannerMaker() {
   return (
     <TextBannerMakerStyledWrapper>
       <TextBannerPreview />
@@ -16,12 +22,6 @@ const TextBannerMaker = (props) => {
       <ButtonArea />
     </TextBannerMakerStyledWrapper>
   );
-};
+}
 
 export default TextBannerMaker;
-
-const TextBannerMakerStyledWrapper = styled.div`
-  text-align: center;
-  box-sizing: border-box;
-  margin-top: 30px;
-`;

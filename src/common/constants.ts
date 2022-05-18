@@ -1,9 +1,11 @@
-export const PICKER_TYPE = {
+export const PICKER_TYPE: {
+  [key: string]: string;
+} = {
   BACKGROUND: 'background',
   TEXT: 'text',
 };
 
-export const SWATCH_PRESET = [
+export const SWATCH_PRESET: string[] = [
   '#f44336',
   '#e91e63',
   '#9c27b0',

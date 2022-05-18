@@ -20,27 +20,9 @@ const TextBannerPreview = () => {
 
   const { setCanvasImageDownlink } = actions;
 
-  const canvasRef = useRef(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    const render = async () => {
-      const canvas = canvasRef.current;
-      canvas.width = canvasWidth;
-      canvas.height = canvasHeight;
-      const ctx = canvas.getContext('2d');
-
-      ctx.fillStyle = canvasBackgroundColor;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      setCanvasFont(canvas, {
-        color: canvasFontColor,
-        size: canvasFontSize,
-        family: canvasFontFamily,
-      });
-
-      drawText(canvas, canvasText || DEFAULT_TEXT, 40);
-      setCanvasImageDownlink(canvas.toDataURL());
-    };
     render();
   }, [
     canvasText,
@@ -52,6 +34,26 @@ const TextBannerPreview = () => {
     canvasFontColor,
     setCanvasImageDownlink,
   ]);
+
+  const render = async () => {
+    const canvas = canvasRef.current as HTMLCanvasElement;
+    canvas.width = canvasWidth;
+    canvas.height = canvasHeight;
+
+    const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+
+    ctx.fillStyle = canvasBackgroundColor;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    setCanvasFont(canvas, {
+      color: canvasFontColor,
+      size: canvasFontSize,
+      family: canvasFontFamily,
+    });
+
+    drawText(canvas, canvasText || DEFAULT_TEXT, 40);
+    setCanvasImageDownlink(canvas.toDataURL());
+  };
 
   return (
     <TextBannerPreviewStyledWrapper>
@@ -73,8 +75,8 @@ const TextBannerPreviewStyledWrapper = styled.div`
  * @param {*} params font size, font color, font family
  * @description 캔버스의 들어갈 폰트의 size와 color, 글씨체를 설정해줍니다.
  */
-export const setCanvasFont = (canvas, params) => {
-  const ctx = canvas.getContext('2d');
+export const setCanvasFont = (canvas: HTMLCanvasElement, params: { color: string; size: number; family: string }) => {
+  const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
   const { color, size, family } = params;
   ctx.font = `${size}px ${family}`;
   ctx.fillStyle = color;
@@ -88,8 +90,8 @@ export const setCanvasFont = (canvas, params) => {
  * @param {*} fontSize text size
  * @description 캔버스 배너 가운데에 텍스트를 기입합니다
  */
-export const drawText = (canvas, text, fontSize) => {
-  const ctx = canvas.getContext('2d');
+export const drawText = (canvas: HTMLCanvasElement, text: string, fontSize: number) => {
+  const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
   const defaultWidth = canvas.width / 2;
   const defaultHeight = canvas.height / 2;
   const fontHeight = fontSize * 1.4;
@@ -105,13 +107,16 @@ export const drawText = (canvas, text, fontSize) => {
     });
   } else {
     const mid = (lines.length - 1) / 2;
+
     const offsets = lines
       .map((line, index) => index)
-      .reduce((prev, curr) => {
+      .reduce<[boolean, number][]>((prev, curr) => {
         const subtract = curr - mid;
-        prev.push([subtract < 0, parseInt(subtract.toString(), 10)]);
+        const isMinus = subtract < 0;
+        prev.push([isMinus, parseInt(subtract.toString(), 10)]);
         return prev;
       }, []);
+
     offsets.map(([sign, offset], index) => {
       const position = offset * fontHeight;
       const e = sign ? (fontHeight / 2) * -1 : fontHeight / 2;
